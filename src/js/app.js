@@ -9,11 +9,12 @@ App = {
             var legendTemplate = $('#legendTemplate');
 
             for (i = 0; i < data.length; i++) {
-                var url = 'https://avatars.dicebear.com/v1/male/' + data[i].id + '/100.png'
+                var url = 'https://avatars.dicebear.com/v1/male/' + data[i].id + '/100.png';
+                var level = 'Level ' + data[i].level;
                 legendTemplate.find('.legend-avatar').attr('src', url);
                 legendTemplate.find('.legend-name').text(data[i].name);
-                legendTemplate.find('.legend-level').text(data[i].level);
-                legendTemplate.find('.legend-level').text(data[i].level);
+                legendTemplate.find('.legend-level').text(level);
+                legendTemplate.find('.legend-other').text(data[i].level);
                 legendsRow.append(legendTemplate.html());
             }
         });
