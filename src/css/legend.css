@@ -2,3 +2,15 @@
 .row {
     margin-bottom: 15px;
 }
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  /* background-color: #333; */
+  background: url(../images/cover_bg.jpg) no-repeat;
+  background-size: cover;
+}

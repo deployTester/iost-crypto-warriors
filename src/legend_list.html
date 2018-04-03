@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Legend</title>
+
+    <link rel="stylesheet" href="css/legend.css">
+
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">  panel in bootstrap 4.0.0 has no border =.= -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/cover.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Legend Home</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link" href="legend_list.html">Legend List</a>
+                </nav>
+            </div>
+        </header>
+        <!-- <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Legend</h1>
+                <hr/>
+                <br/>
+            </div>
+        </div> -->
+
+        <div id="legendRow" class="row">
+            <!-- LOAD LEGEND HERE -->
+
+        </div>
+    </div>
+
+    <!-- Template for legend cell -->
+    <div id="legendTemplate" style="display: none;">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default panel-legend">
+                <div class="panel-heading">
+                    <h2 class="panel-title legend-name">Legend Name</h2>
+                </div>
+                <div class="panel-body">
+                    <img class="img-rounded legend-avatar" style="width: 100%;" src="" data-holder-rendered="true">
+                    <div>
+                        <h4 class="legend-level">Level 4</h4>
+                    </div>
+                    <div class="row pb-20 justify-content-center">
+                        <!-- should be another template -->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <h4 class="legend-other text-center">123</h4>
+                            <span class="badge badge-pill badge-dark font-weight-normal">posts</span>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <h4 class="text-center">19</h4>
+                            <span class="badge badge-pill badge-dark font-weight-normal">friends</span>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <h4 class="text-center">45</h4>
+                            <span class="badge badge-pill badge-dark font-weight-normal">badges</span>
+                        </div>
+                        <!-- should be another template end -->
+                    </div>
+                    <button class="btn btn-primary btn-fight" type="button" data-id="0">Fight!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Template for legend cell end -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+    <!-- why a local jquery won't work?? -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/web3.min.js"></script> -->
+    <!-- <script src="js/truffle-contract.min.js"></script> -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
