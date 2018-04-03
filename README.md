@@ -2,7 +2,8 @@
 
 ### Development log
 
-##### ⚡️Initial state:
+#### ⚡️Initial state:
+
 * A person: 
     * sum of force: 100
         * a knife: 10
@@ -19,7 +20,7 @@
     * has a hurt force with certain number
     * is rare or normal or with certain particular feature
 
-##### ⚡️Avatar generation:
+#### ⚡️Avatar generation:
 
 * Create random avatars based on seed (maybe name?): https://avatars.dicebear.com/
 * Generated images should be stored in some cloud.
@@ -29,3 +30,10 @@
     * user input username, which create a unique id;
     * pass that id to our own server, generate an avatar and upload to qiniu cloud;
     * retrieve corresponding image url to display on the website
+
+
+#### ⚡️ToDoList:
+
+* [ ] legend profile page
+* [ ] reconstruct htmls and csses
+* [ ] custom avatar generation
