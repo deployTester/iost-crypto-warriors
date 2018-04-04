@@ -34,7 +34,7 @@
 
 #### ⚡️ToDoList:
 
-* [ ] legend profile page
+* [x] legend profile page
 * ~~[ ] reconstruct htmls and csses~~ seems to be unnecessary at present
 * [ ] connect with Metamask using Web3.js
 * [ ] connect all the page flow

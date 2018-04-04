@@ -9,7 +9,7 @@ App = {
             var legendTemplate = $('#legendTemplate');
 
             for (i = 0; i < data.length; i++) {
-                var url = '../images/avatar/girl.jpg';// + data[i].id;
+                var url = '../images/avatar/boy2.jpg';// + data[i].id;
                 var level = 'Level ' + data[i].level;
                 legendTemplate.find('.legend-avatar').attr('src', url);
                 legendTemplate.find('.legend-name').text(data[i].name);
