@@ -35,5 +35,9 @@
 #### ⚡️ToDoList:
 
 * [ ] legend profile page
-* [ ] reconstruct htmls and csses
-* [ ] custom avatar generation
+* ~~[ ] reconstruct htmls and csses~~ seems to be unnecessary at present
+* [ ] connect with Metamask using Web3.js
+* [ ] connect all the page flow
+* [ ] able to create a unique legend
+* [ ] all legends should be stored somewhere else...
+* [ ] custom avatar generation (low priority)
