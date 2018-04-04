@@ -14,8 +14,4 @@ contract Game is Ownable {
         fighters.push(Fighter.Data(fighterId, name, gender, now, 0));
         fighterOwners[fighterId] = owner;
     }
-
-    // function wearingItems(uint fighterId) public view returns (Fighter.Data storage) {
-
-    // }
 }
