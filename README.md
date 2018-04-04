@@ -2,6 +2,8 @@
 
 ### Development log
 
+**This is completly a monologue.**
+
 #### ⚡️Initial state:
 
 * A person: 
