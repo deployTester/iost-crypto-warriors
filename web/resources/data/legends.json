@@ -1,0 +1,131 @@
+[
+    {
+      "id": 0,
+      "name": "Frieda",
+      "picture": "imlevels/scottish-terrier.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Lisco, Alabama"
+    },
+    {
+      "id": 1,
+      "name": "Gina",
+      "picture": "imlevels/scottish-terrier.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Tooleville, West Virginia"
+    },
+    {
+      "id": 2,
+      "name": "Collins",
+      "picture": "imlevels/french-bulldog.jpeg",
+      "level": 2,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Freeburn, Idaho"
+    },
+    {
+      "id": 3,
+      "name": "Melissa",
+      "picture": "imlevels/boxer.jpeg",
+      "level": 2,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Camas, Pennsylvania"
+    },
+    {
+      "id": 4,
+      "name": "Jeanine",
+      "picture": "imlevels/french-bulldog.jpeg",
+      "level": 2,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Gerber, South Dakota"
+    },
+    {
+      "id": 5,
+      "name": "Elvia",
+      "picture": "imlevels/french-bulldog.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Innsbrook, Illinois"
+    },
+    {
+      "id": 6,
+      "name": "Latisha",
+      "picture": "imlevels/golden-retriever.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Soudan, Louisiana"
+    },
+    {
+      "id": 7,
+      "name": "Coleman",
+      "picture": "imlevels/golden-retriever.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Jacksonwald, Palau"
+    },
+    {
+      "id": 8,
+      "name": "Nichole",
+      "picture": "imlevels/french-bulldog.jpeg",
+      "level": 2,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Honolulu, Hawaii"
+    },
+    {
+      "id": 9,
+      "name": "Fran",
+      "picture": "imlevels/boxer.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Matheny, Utah"
+    },
+    {
+      "id": 10,
+      "name": "Leonor",
+      "picture": "imlevels/boxer.jpeg",
+      "level": 2,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Tyhee, Indiana"
+    },
+    {
+      "id": 11,
+      "name": "Dean",
+      "picture": "imlevels/scottish-terrier.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Windsor, Montana"
+    },
+    {
+      "id": 12,
+      "name": "Stevenson",
+      "picture": "imlevels/french-bulldog.jpeg",
+      "level": 3,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Kingstowne, Nevada"
+    },
+    {
+      "id": 13,
+      "name": "Kristina",
+      "picture": "imlevels/golden-retriever.jpeg",
+      "level": 4,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Sultana, Massachusetts"
+    },
+    {
+      "id": 14,
+      "name": "Ethel",
+      "picture": "imlevels/golden-retriever.jpeg",
+      "level": 2,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Broadlands, Oregon"
+    },
+    {
+      "id": 15,
+      "name": "Terry",
+      "picture": "imlevels/golden-retriever.jpeg",
+      "level": 2,
+      "items": ["Scottish Terrier","Scottish Terrier","Scottish Terrier"],
+      "other": "Dawn, Wisconsin"
+    }
+  ]
+  

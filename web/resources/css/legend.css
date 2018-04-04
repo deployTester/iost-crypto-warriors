@@ -1,0 +1,15 @@
+/* don't think overriding is a nice solution... */
+.row {
+    margin-bottom: 15px;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background: url(../images/cover_bg.jpg) no-repeat;
+  background-size: cover;
+}
