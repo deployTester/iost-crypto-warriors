@@ -4,7 +4,7 @@ App = {
 
     init: function () {
         // Load legends.
-        $.getJSON('../legends.json', function (data) {
+        $.getJSON('../data/legends.json', function (data) {
             var legendsRow = $('#legendRow');
             var legendTemplate = $('#legendTemplate');
 

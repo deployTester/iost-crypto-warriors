@@ -87,6 +87,7 @@ body {
     float: left;
   }
   .nav-masthead {
+    margin-top: 1.5em;
     float: right;
   }
 }
