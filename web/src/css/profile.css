@@ -2,6 +2,10 @@
     text-shadow: none;
 } */
 
+.home-body {
+    background: url(../images/home_bg.jpg) no-repeat;
+}
+
 .list-group-item {
     border: 0px;
 }
@@ -13,9 +17,7 @@
     /* height: 300px; */
 }
 
-.profile-avatar {
-
-}
+.profile-avatar {}
 
 .profile-card-header {
     color: white;

@@ -49,11 +49,11 @@
 							<div class="modal-body">
 								<form>
 									<div class="form-group">
-										<label for="legend-name" class="col-form-label">Name:</label>
-										<input type="text" class="form-control" id="legend-name">
+										<label for="fighter-name" class="col-form-label">Name:</label>
+										<input type="text" class="form-control" id="fighter-name">
 									</div>
 									<div class="form-group">
-										<label for="legend-gender" class="col-form-label">Gender:</label>
+										<label for="fighter-gender" class="col-form-label">Gender:</label>
 										<br>
 										<div class="btn-group btn-group-toggle" data-toggle="buttons" id="gender-group">
 											<label class="btn btn-secondary active">
@@ -71,7 +71,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary" id="create-legend-save">Save</button>
+								<button type="button" class="btn btn-primary" id="create-fighter-save" onclick="createFighter();">Save</button>
 							</div>
 						</div>
 					</div>
@@ -86,12 +86,21 @@
 			</div>
 		</footer>
 	</div>
-	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	    crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	    crossorigin="anonymous"></script>
+	<script src="lib/web3.min.js"></script>
+	<script src="lib/truffle-contract.min.js"></script>
 	<script src="js/app.js"></script>
+
+	<script>
+		function createFighter() {
+			window.location = "./profile.html";
+		}
+	</script>
 </body>
 
 </html>
