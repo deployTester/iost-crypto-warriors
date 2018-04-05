@@ -1,15 +1,16 @@
 App = {
     web3Provider: null,
-    contracts: {},
+    gameContracts: {},
 
     init: function () {
-        // Load legends.
+		// Load legends.
+		// TODO: should get data from server or chain...
         $.getJSON('../data/legends.json', function (data) {
             var legendsRow = $('#legendRow');
             var legendTemplate = $('#legendTemplate');
 
             for (i = 0; i < data.length; i++) {
-                var url = '../images/avatar/boy2.jpg';// + data[i].id;
+                var url = '../images/avatar/boy2.jpg'; // + data[i].id;
                 var level = 'Level ' + data[i].level;
                 legendTemplate.find('.legend-avatar').attr('src', url);
                 legendTemplate.find('.legend-name').text(data[i].name);
@@ -18,19 +19,6 @@ App = {
                 legendsRow.append(legendTemplate.html());
             }
         });
-
-        /* test for for-in and for-of
-        let list = [5,6,7,8];
-        for (const i in list) {
-            console.log("for-in");
-            console.log(i);
-        }
-
-        for (const i of list) {
-            console.log("for-of");
-            console.log(i);
-        }
-        */
 
         return App.initWeb3();
     },
@@ -52,9 +40,38 @@ App = {
         return App.initContract();
     },
 
-    initContract: function() {
-        
-    }
+    initContract: function () {
+        // 🚀：Artifacts are information about our contract such as its deployed address and Application Binary Interface (ABI). 
+        // The ABI is a JavaScript object defining how to interact with the contract including its variables, functions and their parameters.
+        $.getJSON('../ethereum/build/contracts/Game.json', function (data) {
+            // Get the necessary contract artifact file and instantiate it with truffle-contract
+            var GameArtifact = data;
+            App.gameContracts.Adoption = TruffleContract(GameArtifact);
+
+            // Set the provider for our contract
+            App.gameContracts.Adoption.setProvider(App.web3Provider);
+
+            // Use our contract to retrieve and mark the adopted pets
+            return App.markAdopted();
+        });
+
+        return App.bindEvents();
+    },
+
+    bindEvents: function () {
+        $(document).on('click', '#create-legend-save', App.createLegend);
+    },
+
+	createLegend: function() {
+		console.log('createLegend called');
+
+		var name = $('#legend-name').val()
+		var gender = $('.btn-group > .btn.active').text()
+	
+		console.log(name, gender)
+		// TODO: call create legend functions in contract
+	}
+
 };
 
 $(function () {
