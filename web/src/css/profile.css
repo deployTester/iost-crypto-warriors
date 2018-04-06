@@ -6,26 +6,26 @@
     background: url(../images/home_bg.jpg) no-repeat;
 }
 
-.list-group-item {
-    border: 0px;
-}
-
 .profile-row {
     /* align-content: center; */
-    background-color: #00000054;
+    /* color: #fff; */
     /* width: 300px; */
     /* height: 300px; */
 }
 
-.profile-avatar {}
+.profile-avatar {
+    border: 1px inset rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
 
 .profile-card-header {
     color: white;
     font-size: 1.5em;
-    margin: 1em;
+    background-color: rgba(0,0,0,.3);
 }
 
 .profile-card-list {
     color: rgb(31, 31, 31);
     height: profile-avatar;
+    font-style: normal !important;
 }

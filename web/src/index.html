@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/home.css">
 
 	<script src="lib/web3.js-dist/web3.min.js"></script>
-	<script src="lib/truffle-contract.min.js"></script>
+	<script src="lib/truffle-contract-dist/truffle-contract.js"></script>
 </head>
 
 <body class="home-body text-center">
@@ -23,7 +23,8 @@
 				<h3 class="masthead-brand">Legend Home</h3>
 				<nav class="nav nav-masthead justify-content-center">
 					<a class="nav-link active" href="#">Home</a>
-					<a class="nav-link" href="legend-list.html">Legend List</a>
+					<a class="nav-link" href="profile.html">Me Myself and I</a>
+					<!-- <a class="nav-link" href="legend-list.html">Legend List</a> -->
 				</nav>
 			</div>
 		</header>
@@ -75,7 +76,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary" id="create-fighter-save" onclick="createFighter();">Save</button>
+								<button type="button" class="btn btn-primary" id="create-fighter-save">Save</button>
 							</div>
 						</div>
 					</div>
@@ -100,12 +101,6 @@
 	<!-- solve the popper.js issue by using xx.bundle.xx -->
 	<script src="lib/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 	<script src="js/app.js"></script>
-
-	<script>
-		function createFighter() {
-			window.location = "./profile.html";
-		}
-	</script>
 </body>
 
 </html>

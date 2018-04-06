@@ -1,0 +1,1433 @@
+{
+  "contractName": "Game",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "fighters",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "gender",
+          "type": "uint8"
+        },
+        {
+          "name": "readyTime",
+          "type": "uint256"
+        },
+        {
+          "name": "itemCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "fighterOwners",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "gender",
+          "type": "uint8"
+        }
+      ],
+      "name": "createFighter",
+      "outputs": [
+        {
+          "name": "fighterId",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506107ae806100536000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632e6b221d146100725780638da5cb5b1461015557806392165a60146101aa578063e5cbb6931461020d578063f2fde38b1461028a575b600080fd5b341561007d57600080fd5b61009360048080359060200190919050506102c3565b60405180868152602001806020018560018111156100ad57fe5b60ff1681526020018481526020018381526020018281038252868181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156101425780601f1061011757610100808354040283529160200191610142565b820191906000526020600020905b81548152906001019060200180831161012557829003601f168201915b5050965050505050505060405180910390f35b341561016057600080fd5b610168610314565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101b557600080fd5b6101cb6004808035906020019091905050610339565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021857600080fd5b610274600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803560ff1690602001909190505061036c565b6040518082815260200191505060405180910390f35b341561029557600080fd5b6102c1600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506104b3565b005b6001818154811015156102d257fe5b906000526020600020906007020160009150905080600001549080600101908060020160009054906101000a900460ff16908060030154908060040154905085565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60026020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060018054905090506001805480600101828161038a9190610608565b9160005260206000209060070201600060a0604051908101604052808581526020018781526020018660018111156103be57fe5b8152602001428152602001600081525090919091506000820151816000015560208201518160010190805190602001906103f992919061063a565b5060408201518160020160006101000a81548160ff0219169083600181111561041e57fe5b021790555060608201518160030155608082015181600401555050506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff166002600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561050e57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561054a57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b8154818355818115116106355760070281600702836000526020600020918201910161063491906106ba565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061067b57805160ff19168380011785556106a9565b828001600101855582156106a9579182015b828111156106a857825182559160200191906001019061068d565b5b5090506106b69190610715565b5090565b61071291905b8082111561070e576000808201600090556001820160006106e1919061073a565b6002820160006101000a81549060ff021916905560038201600090556004820160009055506007016106c0565b5090565b90565b61073791905b8082111561073357600081600090555060010161071b565b5090565b90565b50805460018160011615610100020316600290046000825580601f10610760575061077f565b601f01602090049060005260206000209081019061077e9190610715565b5b505600a165627a7a72305820538b473f70f3d6b3264e60103325deb61c51e56ffca389511ec5fb5f440fb24e0029",
+  "deployedBytecode": "0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632e6b221d146100725780638da5cb5b1461015557806392165a60146101aa578063e5cbb6931461020d578063f2fde38b1461028a575b600080fd5b341561007d57600080fd5b61009360048080359060200190919050506102c3565b60405180868152602001806020018560018111156100ad57fe5b60ff1681526020018481526020018381526020018281038252868181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156101425780601f1061011757610100808354040283529160200191610142565b820191906000526020600020905b81548152906001019060200180831161012557829003601f168201915b5050965050505050505060405180910390f35b341561016057600080fd5b610168610314565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156101b557600080fd5b6101cb6004808035906020019091905050610339565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561021857600080fd5b610274600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803560ff1690602001909190505061036c565b6040518082815260200191505060405180910390f35b341561029557600080fd5b6102c1600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506104b3565b005b6001818154811015156102d257fe5b906000526020600020906007020160009150905080600001549080600101908060020160009054906101000a900460ff16908060030154908060040154905085565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60026020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600060018054905090506001805480600101828161038a9190610608565b9160005260206000209060070201600060a0604051908101604052808581526020018781526020018660018111156103be57fe5b8152602001428152602001600081525090919091506000820151816000015560208201518160010190805190602001906103f992919061063a565b5060408201518160020160006101000a81548160ff0219169083600181111561041e57fe5b021790555060608201518160030155608082015181600401555050506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff166002600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555092915050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561050e57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561054a57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b8154818355818115116106355760070281600702836000526020600020918201910161063491906106ba565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061067b57805160ff19168380011785556106a9565b828001600101855582156106a9579182015b828111156106a857825182559160200191906001019061068d565b5b5090506106b69190610715565b5090565b61071291905b8082111561070e576000808201600090556001820160006106e1919061073a565b6002820160006101000a81549060ff021916905560038201600090556004820160009055506007016106c0565b5090565b90565b61073791905b8082111561073357600081600090555060010161071b565b5090565b90565b50805460018160011615610100020316600290046000825580601f10610760575061077f565b601f01602090049060005260206000209081019061077e9190610715565b5b505600a165627a7a72305820538b473f70f3d6b3264e60103325deb61c51e56ffca389511ec5fb5f440fb24e0029",
+  "sourceMap": "127:406:1:-;;;509:10:3;501:5;;:18;;;;;;;;;;;;;;;;;;127:406:1;;;;;;",
+  "deployedSourceMap": "127:406:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;194:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;238:20:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;231:46:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:247;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;832:169:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;194:30:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;238:20:3:-;;;;;;;;;;;;;:::o;231:46:1:-;;;;;;;;;;;;;;;;;;;;;;:::o;284:247::-;359:14;397:8;:15;;;;385:27;;422:8;:60;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;436:45;;;;;;;;;449:9;436:45;;;;460:4;436:45;;;;466:6;436:45;;;;;;;;;;;;474:3;436:45;;;;479:1;436:45;;;422:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;519:5;;;;;;;;;;;492:13;:24;506:9;492:24;;;;;;;;;;;;:32;;;;;;;;;;;;;;;;;;284:247;;;;:::o;832:169:3:-;653:5;;;;;;;;;;;639:19;;:10;:19;;;631:28;;;;;;;;928:1;908:22;;:8;:22;;;;900:31;;;;;;;;965:8;937:37;;958:5;;;;;;;;;;;937:37;;;;;;;;;;;;988:8;980:5;;:16;;;;;;;;;;;;;;;;;;832:169;:::o;127:406:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport \"../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol\";\nimport \"./Fighter.sol\";\n\ncontract Game is Ownable {\n    using Fighter for Fighter.Data;\n    Fighter.Data[] public fighters;\n\n    mapping (uint => address) public fighterOwners;\n\n    function createFighter(string name, Fighter.Gender gender) public returns (uint fighterId) {\n        fighterId = fighters.length;\n        fighters.push(Fighter.Data(fighterId, name, gender, now, 0));\n        fighterOwners[fighterId] = owner;\n    }\n}",
+  "sourcePath": "/Users/calios/Documents/MyWorkspace/Blockchain/CryptoWarrior/ethereum/contracts/Game.sol",
+  "ast": {
+    "absolutePath": "/Users/calios/Documents/MyWorkspace/Blockchain/CryptoWarrior/ethereum/contracts/Game.sol",
+    "exportedSymbols": {
+      "Game": [
+        332
+      ]
+    },
+    "id": 333,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 283,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/Users/calios/Documents/MyWorkspace/Blockchain/CryptoWarrior/ethereum/node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 284,
+        "nodeType": "ImportDirective",
+        "scope": 333,
+        "sourceUnit": 446,
+        "src": "26:75:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/calios/Documents/MyWorkspace/Blockchain/CryptoWarrior/ethereum/contracts/Fighter.sol",
+        "file": "./Fighter.sol",
+        "id": 285,
+        "nodeType": "ImportDirective",
+        "scope": 333,
+        "sourceUnit": 282,
+        "src": "102:23:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 286,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 445,
+              "src": "144:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$445",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 287,
+            "nodeType": "InheritanceSpecifier",
+            "src": "144:7:1"
+          }
+        ],
+        "contractDependencies": [
+          445
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 332,
+        "linearizedBaseContracts": [
+          332,
+          445
+        ],
+        "name": "Game",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 290,
+            "libraryName": {
+              "contractScope": null,
+              "id": 288,
+              "name": "Fighter",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 281,
+              "src": "164:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Fighter_$281",
+                "typeString": "library Fighter"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "158:31:1",
+            "typeName": {
+              "contractScope": null,
+              "id": 289,
+              "name": "Fighter.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 39,
+              "src": "176:12:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$39_storage_ptr",
+                "typeString": "struct Fighter.Data storage pointer"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 293,
+            "name": "fighters",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "194:30:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage",
+              "typeString": "struct Fighter.Data storage ref[] storage ref"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 291,
+                "name": "Fighter.Data",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 39,
+                "src": "194:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Data_$39_storage_ptr",
+                  "typeString": "struct Fighter.Data storage pointer"
+                }
+              },
+              "id": 292,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "194:14:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage_ptr",
+                "typeString": "struct Fighter.Data storage ref[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 297,
+            "name": "fighterOwners",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "231:46:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 296,
+              "keyType": {
+                "id": 294,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "240:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "231:25:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 295,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "248:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 330,
+              "nodeType": "Block",
+              "src": "375:156:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 309,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 306,
+                      "name": "fighterId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 304,
+                      "src": "385:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 307,
+                        "name": "fighters",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 293,
+                        "src": "397:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage",
+                          "typeString": "struct Fighter.Data storage ref[] storage ref"
+                        }
+                      },
+                      "id": 308,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "397:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "385:27:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 310,
+                  "nodeType": "ExpressionStatement",
+                  "src": "385:27:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 316,
+                            "name": "fighterId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 304,
+                            "src": "449:9:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 317,
+                            "name": "name",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 299,
+                            "src": "460:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 318,
+                            "name": "gender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 301,
+                            "src": "466:6:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Gender_$20",
+                              "typeString": "enum Fighter.Gender"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 319,
+                            "name": "now",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 459,
+                            "src": "474:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 320,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "479:1:1",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_enum$_Gender_$20",
+                              "typeString": "enum Fighter.Gender"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 314,
+                            "name": "Fighter",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 281,
+                            "src": "436:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Fighter_$281_$",
+                              "typeString": "type(library Fighter)"
+                            }
+                          },
+                          "id": 315,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "Data",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 39,
+                          "src": "436:12:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Data_$39_storage_ptr_$",
+                            "typeString": "type(struct Fighter.Data storage pointer)"
+                          }
+                        },
+                        "id": 321,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "436:45:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$39_memory",
+                          "typeString": "struct Fighter.Data memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$39_memory",
+                          "typeString": "struct Fighter.Data memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 311,
+                        "name": "fighters",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 293,
+                        "src": "422:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage",
+                          "typeString": "struct Fighter.Data storage ref[] storage ref"
+                        }
+                      },
+                      "id": 313,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "422:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Data_$39_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Fighter.Data storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 322,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "422:60:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 323,
+                  "nodeType": "ExpressionStatement",
+                  "src": "422:60:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 328,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 324,
+                        "name": "fighterOwners",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 297,
+                        "src": "492:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                          "typeString": "mapping(uint256 => address)"
+                        }
+                      },
+                      "id": 326,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 325,
+                        "name": "fighterId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 304,
+                        "src": "506:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "492:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 327,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 393,
+                      "src": "519:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "492:32:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 329,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:32:1"
+                }
+              ]
+            },
+            "id": 331,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createFighter",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 302,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 299,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "307:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 298,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 301,
+                  "name": "gender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "320:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Gender_$20",
+                    "typeString": "enum Fighter.Gender"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 300,
+                    "name": "Fighter.Gender",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 20,
+                    "src": "320:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Gender_$20",
+                      "typeString": "enum Fighter.Gender"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "306:36:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 305,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 304,
+                  "name": "fighterId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "359:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 303,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "359:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "358:16:1"
+            },
+            "scope": 332,
+            "src": "284:247:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 333,
+        "src": "127:406:1"
+      }
+    ],
+    "src": "0:533:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/calios/Documents/MyWorkspace/Blockchain/CryptoWarrior/ethereum/contracts/Game.sol",
+    "exportedSymbols": {
+      "Game": [
+        332
+      ]
+    },
+    "id": 333,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 283,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/Users/calios/Documents/MyWorkspace/Blockchain/CryptoWarrior/ethereum/node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol",
+        "file": "../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol",
+        "id": 284,
+        "nodeType": "ImportDirective",
+        "scope": 333,
+        "sourceUnit": 446,
+        "src": "26:75:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/calios/Documents/MyWorkspace/Blockchain/CryptoWarrior/ethereum/contracts/Fighter.sol",
+        "file": "./Fighter.sol",
+        "id": 285,
+        "nodeType": "ImportDirective",
+        "scope": 333,
+        "sourceUnit": 282,
+        "src": "102:23:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 286,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 445,
+              "src": "144:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$445",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 287,
+            "nodeType": "InheritanceSpecifier",
+            "src": "144:7:1"
+          }
+        ],
+        "contractDependencies": [
+          445
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 332,
+        "linearizedBaseContracts": [
+          332,
+          445
+        ],
+        "name": "Game",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 290,
+            "libraryName": {
+              "contractScope": null,
+              "id": 288,
+              "name": "Fighter",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 281,
+              "src": "164:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Fighter_$281",
+                "typeString": "library Fighter"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "158:31:1",
+            "typeName": {
+              "contractScope": null,
+              "id": 289,
+              "name": "Fighter.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 39,
+              "src": "176:12:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$39_storage_ptr",
+                "typeString": "struct Fighter.Data storage pointer"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 293,
+            "name": "fighters",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "194:30:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage",
+              "typeString": "struct Fighter.Data storage ref[] storage ref"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 291,
+                "name": "Fighter.Data",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 39,
+                "src": "194:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Data_$39_storage_ptr",
+                  "typeString": "struct Fighter.Data storage pointer"
+                }
+              },
+              "id": 292,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "194:14:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage_ptr",
+                "typeString": "struct Fighter.Data storage ref[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 297,
+            "name": "fighterOwners",
+            "nodeType": "VariableDeclaration",
+            "scope": 332,
+            "src": "231:46:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 296,
+              "keyType": {
+                "id": 294,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "240:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "231:25:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 295,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "248:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 330,
+              "nodeType": "Block",
+              "src": "375:156:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 309,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 306,
+                      "name": "fighterId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 304,
+                      "src": "385:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 307,
+                        "name": "fighters",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 293,
+                        "src": "397:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage",
+                          "typeString": "struct Fighter.Data storage ref[] storage ref"
+                        }
+                      },
+                      "id": 308,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "397:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "385:27:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 310,
+                  "nodeType": "ExpressionStatement",
+                  "src": "385:27:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 316,
+                            "name": "fighterId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 304,
+                            "src": "449:9:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 317,
+                            "name": "name",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 299,
+                            "src": "460:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 318,
+                            "name": "gender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 301,
+                            "src": "466:6:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Gender_$20",
+                              "typeString": "enum Fighter.Gender"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 319,
+                            "name": "now",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 459,
+                            "src": "474:3:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 320,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "479:1:1",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_enum$_Gender_$20",
+                              "typeString": "enum Fighter.Gender"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 314,
+                            "name": "Fighter",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 281,
+                            "src": "436:7:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Fighter_$281_$",
+                              "typeString": "type(library Fighter)"
+                            }
+                          },
+                          "id": 315,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "Data",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 39,
+                          "src": "436:12:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Data_$39_storage_ptr_$",
+                            "typeString": "type(struct Fighter.Data storage pointer)"
+                          }
+                        },
+                        "id": 321,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "436:45:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$39_memory",
+                          "typeString": "struct Fighter.Data memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$39_memory",
+                          "typeString": "struct Fighter.Data memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 311,
+                        "name": "fighters",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 293,
+                        "src": "422:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Data_$39_storage_$dyn_storage",
+                          "typeString": "struct Fighter.Data storage ref[] storage ref"
+                        }
+                      },
+                      "id": 313,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "422:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Data_$39_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Fighter.Data storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 322,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "422:60:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 323,
+                  "nodeType": "ExpressionStatement",
+                  "src": "422:60:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 328,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 324,
+                        "name": "fighterOwners",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 297,
+                        "src": "492:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                          "typeString": "mapping(uint256 => address)"
+                        }
+                      },
+                      "id": 326,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 325,
+                        "name": "fighterId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 304,
+                        "src": "506:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "492:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 327,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 393,
+                      "src": "519:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "492:32:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 329,
+                  "nodeType": "ExpressionStatement",
+                  "src": "492:32:1"
+                }
+              ]
+            },
+            "id": 331,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createFighter",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 302,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 299,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "307:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 298,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 301,
+                  "name": "gender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "320:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Gender_$20",
+                    "typeString": "enum Fighter.Gender"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 300,
+                    "name": "Fighter.Gender",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 20,
+                    "src": "320:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Gender_$20",
+                      "typeString": "enum Fighter.Gender"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "306:36:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 305,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 304,
+                  "name": "fighterId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 331,
+                  "src": "359:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 303,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "359:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "358:16:1"
+            },
+            "scope": 332,
+            "src": "284:247:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 333,
+        "src": "127:406:1"
+      }
+    ],
+    "src": "0:533:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x345ca3e014aaf5dca488057592ee47305d9b3e10",
+      "transactionHash": "0xcc13b21f805d6b9e5558f2ecaad158e18041f174c88abaf7c78afb9e68d8b632"
+    }
+  },
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-04-05T03:20:17.085Z"
+}
