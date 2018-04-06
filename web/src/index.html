@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Legend Home</title>
+	<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/home.css">
+
+	<script src="lib/web3.js-dist/web3.min.js"></script>
+	<script src="lib/truffle-contract-dist/truffle-contract.js"></script>
+</head>
+
+<body class="home-body text-center">
+
+	<div class="home-container h-100 p-3 mx-auto d-flex flex-column">
+		<header class="masthead mb-auto">
+			<div class="inner">
+				<h3 class="masthead-brand">Legend Home</h3>
+				<nav class="nav nav-masthead justify-content-center">
+					<a class="nav-link active" href="#">Home</a>
+					<a class="nav-link" href="profile.html">Me Myself and I</a>
+					<!-- <a class="nav-link" href="legend-list.html">Legend List</a> -->
+				</nav>
+			</div>
+		</header>
+
+		<main role="main" class="inner home">
+			<h1 class="home-heading">Start your page.</h1>
+			<br />
+			<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen
+				background photo to make it your own.</p>
+			<br />
+			<br />
+			<p class="lead">
+				<button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#homeModal">
+					Create Your Legend
+				</button>
+
+				<!-- Get username and gender -->
+				<div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="home-modal-title">Create your legend</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="fighter-name" class="col-form-label">Name:</label>
+										<input type="text" class="form-control" id="fighter-name">
+									</div>
+									<div class="form-group">
+										<label for="fighter-gender" class="col-form-label">Gender:</label>
+										<br>
+										<div class="btn-group btn-group-toggle" data-toggle="buttons" id="gender-group">
+											<label class="btn btn-secondary active">
+												<input type="radio" name="options" id="option1" autocomplete="off" checked> Male
+											</label>
+											<label class="btn btn-secondary">
+												<input type="radio" name="options" id="option2" autocomplete="off"> Female
+											</label>
+											<label class="btn btn-secondary">
+												<input type="radio" name="options" id="option3" autocomplete="off"> Secret
+											</label>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary" id="create-fighter-save">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Get username and gender end -->
+			</p>
+		</main>
+
+		<footer class="mastfoot mt-auto">
+			<div class="inner">
+				<p>Copyright © 2018 IOST</p>
+			</div>
+		</footer>
+	</div>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	    crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script> -->
+	<script src="lib/jquery-3.3.1.min.js"></script>
+	<!-- solve the popper.js issue by using xx.bundle.xx -->
+	<script src="lib/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>

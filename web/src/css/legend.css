@@ -1,0 +1,19 @@
+/********** Legend List **********/
+.legend-body {
+  background: url(../images/home_bg.jpg) repeat;
+}
+
+
+
+
+/******** Legend List End ********/
+
+
+/* don't think overriding is a nice solution... */
+
+.row {
+  margin-bottom: 15px;
+}
+
+
+

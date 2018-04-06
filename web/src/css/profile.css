@@ -1,0 +1,31 @@
+/* .profile-body {
+    text-shadow: none;
+} */
+
+.home-body {
+    background: url(../images/home_bg.jpg) no-repeat;
+}
+
+.profile-row {
+    /* align-content: center; */
+    /* color: #fff; */
+    /* width: 300px; */
+    /* height: 300px; */
+}
+
+.profile-avatar {
+    border: 1px inset rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.profile-card-header {
+    color: white;
+    font-size: 1.5em;
+    background-color: rgba(0,0,0,.3);
+}
+
+.profile-card-list {
+    color: rgb(31, 31, 31);
+    height: profile-avatar;
+    font-style: normal !important;
+}

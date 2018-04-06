@@ -1,0 +1,45 @@
+/********** Home **********/
+
+.home-body {
+  background: url(../images/home_bg.jpg) no-repeat;
+}
+
+.home-container {
+  max-width: 45em;
+}
+
+.home {
+  color: rgba(240, 240, 240);
+  padding: 10.5rem 1.5rem;
+}
+
+.home .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+} 
+
+/* Custom default button */
+
+.btn-secondary {
+  color: #333;
+  text-shadow: none;
+  background-color: rgba(240, 240, 240);
+  border: .05rem solid rgba(240, 240, 240);
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .2);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: rgba(51, 51, 51, .8);
+  background-color: rgba(255, 255, 255, .9);
+  border: .05rem solid rgba(255, 255, 255, .9);
+}
+
+/* Modal */
+.modal-content {
+  text-align: left;
+  color: #333;
+}
+
+
+/******** Home End ********/
