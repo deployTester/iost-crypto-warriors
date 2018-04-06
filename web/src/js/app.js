@@ -42,18 +42,18 @@ App = {
     initContract: function () {
         // 🚀：Artifacts are information about our contract such as its deployed address and Application Binary Interface (ABI). 
         // The ABI is a JavaScript object defining how to interact with the contract including its variables, functions and their parameters.
-        // TODO: use json for test.
+        // TODO: pretend to get json from contract compiled abi json.
         $.getJSON('../data/Fighter.json', function (data) {
             // Get the necessary contract artifact file and instantiate it with truffle-contract
             var FighterArtifact = data;
             // console.log(data);
-            App.contracts.Fighter = contract(FighterArtifact);
+            App.contracts.Fighter = TruffleContract(FighterArtifact);
 
             // Set the provider for our contract
             App.contracts.Fighter.setProvider(App.web3Provider);
 
             // Use our contract to retrieve your fighter if any
-            return App.getFighterData();
+            return App.getFighterData(data);
         });
 
         return App.bindEvents();
@@ -69,12 +69,13 @@ App = {
         var name = $('#fighter-name').val();
         var gender = $('.btn-group > .btn.active').text();
 
-        console.log(name, gender)
+        console.log(name, $.trim(gender))
         // TODO: call create fighter functions in contract
     },
 
-    getFighterData: function() {
+    getFighterData: function(data) {
         // TODO: render a fighter and his data if any
+        console.log(data);
     },
 
     startFight: function() {
