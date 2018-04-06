@@ -42,4 +42,5 @@
 * [ ] connect all the page flow
 * [ ] able to create a unique legend
 * [ ] all legends should be stored somewhere else...
+* [ ] connect using truffle-contract
 * ~~[ ] custom avatar generation (low priority)~~ replaced by several fixed avatars from [here](http://www.aigei.com/view/73350.html)
