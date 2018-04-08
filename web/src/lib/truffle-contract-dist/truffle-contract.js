@@ -23,7 +23,9 @@ var contract = (function(module) {
   };
 
   Provider.prototype.sendAsync = function() {
-    return this.provider.sendAsync.apply(this.provider, arguments);
+    // fix: for web3.js 1.0.0 version (0406)
+    // sendAsync.apply => send.apply
+    return this.provider.send.apply(this.provider, arguments);
   };
 
   var BigNumber = (new Web3()).utils.toBN(0).constructor;
@@ -203,7 +205,9 @@ var contract = (function(module) {
             };
 
             args.push(tx_params, callback);
-            fn.apply(self, args);
+            // fix: for web3.js 1.0.0 version (0406)
+            // fn.apply() => fn.send.apply() ???
+            // fn.send.apply(self, args);
           });
         });
       };
@@ -281,8 +285,9 @@ var contract = (function(module) {
 
     if (typeof contract == "string") {
       var address = contract;
-      var contract_class = constructor.web3.eth.contract(this.abi);
-      contract = contract_class.at(address);
+      // fix: for web3.js 1.0.0 version (0406)
+      var contract_class = new constructor.web3.eth.Contract(this.abi, address);
+      // contract = contract_class.at(address);
     }
 
     this.contract = contract;
@@ -297,10 +302,11 @@ var contract = (function(module) {
           this[item.name] = Utils.synchronizeFunction(contract[item.name], this, constructor);
         }
 
-        this[item.name].call = Utils.promisifyFunction(contract[item.name].call, constructor);
-        this[item.name].sendTransaction = Utils.promisifyFunction(contract[item.name].sendTransaction, constructor);
-        this[item.name].request = contract[item.name].request;
-        this[item.name].estimateGas = Utils.promisifyFunction(contract[item.name].estimateGas, constructor);
+        // fix: for web3.js 1.0.0 version (0406)
+        // this[item.name].call = Utils.promisifyFunction(contract[item.name].call, constructor);
+        // this[item.name].sendTransaction = Utils.promisifyFunction(contract[item.name].sendTransaction, constructor);
+        // this[item.name].request = contract[item.name].request;
+        // this[item.name].estimateGas = Utils.promisifyFunction(contract[item.name].estimateGas, constructor);
       }
 
       if (item.type == "event") {
@@ -511,10 +517,12 @@ var contract = (function(module) {
           }
         }
 
-        self.web3.version.getNetwork(function(err, result) {
-          if (err) return reject(err);
+        // fix: for web3.js 1.0.0 version (0406)
+        // self.web3.version.getNetwork(function(err, result) {
+        self.web3.eth.net.getId().then(network_id => {
+          // if (err) return reject(err);
 
-          var network_id = result.toString();
+          // var network_id = result.toString();
 
           // If we found the network via a number, let's use that.
           if (self.hasNetwork(network_id)) {
