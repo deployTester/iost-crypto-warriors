@@ -24,16 +24,16 @@ App = {
     },
 
     initWeb3: function () {
-        // if (typeof web3 !== 'undefined') {
-        //     console.log('web3 exists! ');
-        //     App.web3Provider = web3.currentProvider;
-        // } else {
+        if (typeof web3 !== 'undefined') {
+            console.log('web3 exists! ');
+            App.web3Provider = web3.currentProvider;
+        } else {
             // TODO: web3.js 1.0 prefers to a ws provider, while Metamask doesn't support it yet. 
             // Update required later.            
             // var web3Infura = new Web3(new Web3.providers.WebsocketProvider("wss://mainnet.infura.io/ws"));        
             // var czEvents = new web3Infura.eth.Contract(cryptoZombiesABI, cryptoZombiesAddress);
             App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-        // }
+        }
 
         web3 = new Web3(App.web3Provider);
         return App.initContract();
@@ -42,45 +42,33 @@ App = {
     initContract: function () {
         // 🚀：Artifacts are information about our contract such as its deployed address and Application Binary Interface (ABI). 
         // The ABI is a JavaScript object defining how to interact with the contract including its variables, functions and their parameters.
-        // TODO: pretend to get json from contract compiled abi json.
-        // $.getJSON('../data/Fighter.json', function (data) {
-        //     // Get the necessary contract artifact file and instantiate it with truffle-contract
-        //     var FighterArtifact = data;
-        //     // console.log(data);
-        //     App.contracts.Fighter = TruffleContract(FighterArtifact);
-
-        //     // Set the provider for our contract
-        //     App.contracts.Fighter.setProvider(App.web3Provider);
-
-        //     // Use our contract to retrieve your fighter if any
-        //     return App.getFighterData(data);
-        // });
+        const contractAddress = '0x045a15F8C38c91c56fc6749311fAC0f77a9bb55d';
 
         $.getJSON('../data/Game.json', function (data) {
-            console.log(data);
+            // console.log(data);
 
             var abi = data['abi'];
-            console.log(abi);
+            // console.log(abi);
 
             game = new web3.eth.Contract(
                 abi,
-                "0x045a15F8C38c91c56fc6749311fAC0f77a9bb55d"
+                contractAddress
             );
             game.setProvider(App.web3Provider);
 
-            console.log("game.methods:", game.methods);
+            // console.log("game.methods:", game.methods);
         });
 
         return App.bindEvents();
     },
 
     bindEvents: function () {
-        console.log('bind click');
+        // console.log('bind click');
         $(document).on('click', '#create-fighter-save', App.createFighter);
     },
 
     createFighter: function () {
-        console.log('createFighter called');
+        // console.log('createFighter called');
 
         var name = $('#fighter-name').val();
         var gender = $('.btn-group > .btn.active').text();
@@ -106,12 +94,11 @@ App = {
                 console.log('confirmation: ', confirmationNumber, receipt);
             })
             .on('receipt', function(receipt){
-                // receipt example
                 console.log('receipt: ', receipt);
-            });
+            })
+            .on('error', console.error);
             // console.log('get all the fighters: ', game.methods.fighters(0).call());
-            // game.methods.fighterOwners('0x590360ea5C69Fa3E347663586182813B74C90C35').call().then(console.log);
-            game.methods.fighters(2).call().then(console.log);
+            // game.methods.fighters(2).call().then(console.log);
         });
     },
 
