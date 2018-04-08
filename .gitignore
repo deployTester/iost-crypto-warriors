@@ -4,7 +4,7 @@
 build/
 
 ### Web ###
-web/src/data/
+/web/src/data/
 
 ### macOS ###
 *.DS_Store
