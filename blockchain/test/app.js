@@ -13,16 +13,32 @@ web3.eth.getGasPrice().then(console.log);
 const fs = require('fs');
 const file = 'ethereum/build/contracts/Game.json';
 const json = JSON.parse(fs.readFileSync(file));
-console.log(json);
+console.log('json:', json);
 const abi = json['abi'];
-console.log(abi);
+console.log('abi:', abi);
+// for (obj of abi) {
+//     console.log(obj);
+// }
 
 const game = new web3.eth.Contract(
     abi, 
-    "0x38cf23c52bb4b13f051aec09580a2de845a7fa35"
+    "0x2c2b9c9a4a25e24b174f26114e8926a9f2128fe4"
 )
 console.log(game);
-game.methods.createFighter('dong', 0).send({from: '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'})
+game.methods.fighters(0).call()
+.then(console.log);
+
+// game.methods.age().call().then(console.log);
+
+game.methods.createFighter('dong', 0).estimateGas({from: '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'})
+.then(function(gasAmount){
+    console.log('gasAmount', gasAmount);
+})
+.catch(function(error){
+    console.log(error);
+});
+
+game.methods.createFighter('dong', 0).send({from: '0x627306090abaB3A6e1400e9345bC60c78a8BEf57', gas: 200000})
 // game.methods.pushFighter('dong').send({from: '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'})
 .on('transactionHash', function(hash) {
     console.log('transactionHash', hash);
@@ -33,4 +49,4 @@ game.methods.createFighter('dong', 0).send({from: '0x627306090abaB3A6e1400e9345b
 .on('receipt', function(receipt) {
     console.log('receipt', receipt);
 })
-game.methods.age().call().then(console.log);
+.on('error', console.error);
