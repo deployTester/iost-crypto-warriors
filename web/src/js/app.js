@@ -1,24 +1,24 @@
 App = {
     web3Provider: null,
-    contracts: {},
+    game: null,
 
     init: function () {
         // Load fighters.
         // TODO: should get data from server or chain...
-        $.getJSON('../data/fighters.json', function (data) {
-            var fightersRow = $('#fighterRow');
-            var fighterTemplate = $('#fighterTemplate');
+        // $.getJSON('../data/fighters.json', function (data) {
+        //     var fightersRow = $('#fighterRow');
+        //     var fighterTemplate = $('#fighterTemplate');
 
-            for (i = 0; i < data.length; i++) {
-                var url = '../images/avatar/boy2.jpg'; // + data[i].id;
-                var level = 'Level ' + data[i].level;
-                fighterTemplate.find('.fighter-avatar').attr('src', url);
-                fighterTemplate.find('.fighter-name').text(data[i].name);
-                fighterTemplate.find('.fighter-level').text(level);
-                fighterTemplate.find('.fighter-other').text(data[i].level);
-                fightersRow.append(fighterTemplate.html());
-            }
-        });
+        //     for (i = 0; i < data.length; i++) {
+        //         var url = '../images/avatar/boy2.jpg'; // + data[i].id;
+        //         var level = 'Level ' + data[i].level;
+        //         fighterTemplate.find('.fighter-avatar').attr('src', url);
+        //         fighterTemplate.find('.fighter-name').text(data[i].name);
+        //         fighterTemplate.find('.fighter-level').text(level);
+        //         fighterTemplate.find('.fighter-other').text(data[i].level);
+        //         fightersRow.append(fighterTemplate.html());
+        //     }
+        // });
 
         return App.initWeb3();
     },
@@ -57,10 +57,18 @@ App = {
         // });
 
         $.getJSON('../data/Game.json', function (data) {
-            var GameArtifact = data;
+            console.log(data);
 
-            App.contracts.Game = TruffleContract(GameArtifact);
-            App.contracts.Game.setProvider(App.web3Provider);
+            var abi = data['abi'];
+            console.log(abi);
+
+            game = new web3.eth.Contract(
+                abi,
+                "0x045a15F8C38c91c56fc6749311fAC0f77a9bb55d"
+            );
+            game.setProvider(App.web3Provider);
+
+            console.log("game.methods:", game.methods);
         });
 
         return App.bindEvents();
@@ -77,11 +85,7 @@ App = {
         var name = $('#fighter-name').val();
         var gender = $('.btn-group > .btn.active').text();
         gender = $.trim(gender);
-
         console.log(name, gender);
-        // TODO: call create fighter functions in contract
-
-        var gameInstance;
 
         web3.eth.getAccounts(function (error, accounts) {
             if (error) {
@@ -89,26 +93,25 @@ App = {
             }
 
             var account = accounts[0];
+            console.log(account);
 
-            App.contracts.Game.deployed().then(function (instance) {
-                gameInstance = instance;
-
-                return gameInstance.createFighter(name, gender, {
-                    from: account
-                });
+            game.methods.createFighter(name, 0).send(
+                {from: account,
+                gas: 200000}
+            )
+            .on('transactionHash', function(hash) {
+                console.log('transactionHash: ', hash);
+            })
+            .on('confirmation', function(confirmationNumber, receipt){
+                console.log('confirmation: ', confirmationNumber, receipt);
+            })
+            .on('receipt', function(receipt){
+                // receipt example
+                console.log('receipt: ', receipt);
             });
-            // App.contracts.Adoption.deployed().then(function (instance) {
-            //     adoptionInstance = instance;
-
-            //     // Execute adopt as a transaction by sending account
-            //     return adoptionInstance.adopt(petId, {
-            //         from: account
-            //     });
-            // }).then(function (result) {
-            //     return App.markAdopted();
-            // }).catch(function (err) {
-            //     console.log(err.message);
-            // });
+            // console.log('get all the fighters: ', game.methods.fighters(0).call());
+            // game.methods.fighterOwners('0x590360ea5C69Fa3E347663586182813B74C90C35').call().then(console.log);
+            game.methods.fighters(2).call().then(console.log);
         });
     },
 
