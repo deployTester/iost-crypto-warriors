@@ -17,3 +17,20 @@ console.log(json);
 const abi = json['abi'];
 console.log(abi);
 
+const game = new web3.eth.Contract(
+    abi, 
+    "0x38cf23c52bb4b13f051aec09580a2de845a7fa35"
+)
+console.log(game);
+game.methods.createFighter('dong', 0).send({from: '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'})
+// game.methods.pushFighter('dong').send({from: '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'})
+.on('transactionHash', function(hash) {
+    console.log('transactionHash', hash);
+})
+.on('confirmation', function(confirmationNumber, receipt) {
+    console.log('confirmation', confirmationNumber, receipt);
+})
+.on('receipt', function(receipt) {
+    console.log('receipt', receipt);
+})
+game.methods.age().call().then(console.log);
