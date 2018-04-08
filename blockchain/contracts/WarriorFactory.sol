@@ -6,6 +6,8 @@ import "./oraclize/oraclizeAPI.sol";
 contract WarriorFactory is Ownable, usingOraclize {
     enum BodyPart { Weapon, Clothes, Belt, LeftRing, RightRing, End }
 
+    event RandomNumberDidGenerate(string randomString);
+
     struct Item {
         BodyPart bodyPart;
         uint power;
@@ -54,10 +56,10 @@ contract WarriorFactory is Ownable, usingOraclize {
             // newRandomNumber_bytes(bytes(_result)); // this is the resulting random number (bytes)
             
             // for simplicity of use, let's also convert the random bytes to uint if we need
-            uint maxRange = 10;//2**(8* 7); // this is the highest uint we want to get. It should never be greater than 2^(8*N), where N is the number of random bytes we had asked the datasource to return
-            randomNumber = uint(keccak256(_result)) % maxRange; // this is an efficient way to get the uint out in the [0, maxRange] range
+            // uint maxRange = 10;//2**(8* 7); // this is the highest uint we want to get. It should never be greater than 2^(8*N), where N is the number of random bytes we had asked the datasource to return
+            // randomNumber = uint(keccak256(_result)) % maxRange; // this is an efficient way to get the uint out in the [0, maxRange] range
             
-            // newRandomNumber_uint(randomNumber); // this is the resulting random number (uint)
+            emit RandomNumberDidGenerate(_result);
         }
     }
 
